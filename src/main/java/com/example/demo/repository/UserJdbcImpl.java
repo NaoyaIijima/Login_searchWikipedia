@@ -11,6 +11,14 @@ public class UserJdbcImpl{
     JdbcTemplate jdbc;
     
     public int insertOne(User user){
-        return 0;    
+        
+         //１件登録
+        int rowNumber = jdbc.update("INSERT INTO m_user(user_id,"
+                + " password)"
+                + " VALUES(?, ?)",
+                user.getUserId(),
+                user.getPassword());
+
+        return rowNumber;
     }
 }

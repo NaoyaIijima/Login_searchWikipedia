@@ -21,4 +21,13 @@ public class UserJdbcImpl{
 
         return rowNumber;
     }
+    
+    public int searchOne(User user){
+        // 全件取得してカウント
+        int count = jdbc.queryForObject("SELECT COUNT(*) FROM m_user WHERE user_id = '"
+                + user.getUserId()+"'", 
+                Integer.class);
+
+        return count;
+    }
 }

@@ -23,4 +23,16 @@ public class SignupService{
         
         return result;
     }
+    
+    public boolean isLogin(User user){
+        boolean result = true;
+        
+        int num = userJdbcImpl.searchOne(user);
+        
+        if(num<=0){
+            result = false;
+        }
+        
+        return result;
+    }
 }

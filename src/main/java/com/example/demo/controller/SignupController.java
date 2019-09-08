@@ -17,7 +17,7 @@ public class SignupController{
     SignupService signupService;
     
     @GetMapping("/signup")
-    public String getMethod(){
+    public String getMethod(@ModelAttribute SignupForm form, Model model){
         return "signup";
     }
     
